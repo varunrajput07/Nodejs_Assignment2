@@ -1,0 +1,13 @@
+<h1>Categories</h1>
+<a href="/categories/new">Add New Category</a>
+<ul>
+    <% categories.forEach(category => { %>
+        <li>
+            <%= category.name %>
+                <a href="/categories/<%= category._id %>/edit">Edit</a>
+                <form action="/categories/<%= category._id %>?_method=DELETE" method="POST">
+                    <button type="submit">Delete</button>
+                </form>
+        </li>
+        <% }) %>
+</ul>
